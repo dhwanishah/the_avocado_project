@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('ejs', ejsEngine);
 app.set('view engine', 'ejs');
 
-
 app.post('/create-user', function(req, res, next) {
   var user = new User({
     email: req.body.email,
@@ -43,7 +42,7 @@ app.post('/create-user', function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.json("{a:1}");
+  res.render('main/home');
 });
 
 app.listen(3000, function(err) {
